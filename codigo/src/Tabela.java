@@ -6,4 +6,12 @@ public class Tabela {
     public Tabela(ArrayList<Jogo> jogos) {
         this.jogos = jogos;
     }
+
+    public ArrayList<Jogo> getJogos() {
+        return jogos;
+    }
+
+    public void setJogos(ArrayList<Jogo> jogos) {
+        this.jogos = jogos;
+    }
 }
