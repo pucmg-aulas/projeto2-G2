@@ -8,4 +8,8 @@ public class Equipe {
     public String getNome() {
         return nome;
     }
+
+    public String setNome() {
+        return nome;
+    }
 }
