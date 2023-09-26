@@ -1,11 +1,18 @@
 public class Placar {
 
-    private int[] Q1 = new int[2];
-    private int[] Q2 = new int[2];
-    private int[] Q3 = new int[2];
-    private int[] Q4 = new int[2]; 
-    private int[] OT = new int[2];
+    private int[] Q1;
+    private int[] Q2;
+    private int[] Q3;
+    private int[] Q4; 
+    private int[] OT;
 
+    public Placar(){
+        Q1 = new int[2];
+        Q2 = new int[2];
+        Q3 = new int[2];
+        Q4 = new int[2];
+        OT = new int[2];
+    }
 
     public int[] getQ1(){
         return Q1; 
