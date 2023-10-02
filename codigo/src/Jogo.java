@@ -33,7 +33,7 @@ public class Jogo {
 
     }
 
-    public char qualEquipe() {
+    public char qualEquipe(String nomeEquipe) {
         
     }
 }
