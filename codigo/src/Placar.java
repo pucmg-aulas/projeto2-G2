@@ -66,7 +66,7 @@ public class Placar {
         return somaPontos; 
     }
 
-    public char VencedorDoJogo(){
+    public char vencedorDoJogo(){
 
         int[] pontosEquipes = totalPontos();
 
