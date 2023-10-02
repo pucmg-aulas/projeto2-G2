@@ -13,6 +13,22 @@ public class Jogo {
         this.placar = placar;
     }
 
+    public LocalDate getData() {
+        return data;
+    }
+
+    public Equipe getEquipeA() {
+        return equipeA;
+    }
+
+    public Equipe getEquipeB() {
+        return equipeB;
+    }
+
+    public Placar getPlacar() {
+        return placar;
+    }
+
     public void exibirPlacar() {
 
     }
