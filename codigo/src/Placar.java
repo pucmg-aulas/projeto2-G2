@@ -55,22 +55,21 @@ public class Placar {
     }
 
 
-    public int[] totalPontos(){
+    public int totalPontos(int posEquipe){
+        int somaPontos = 0;
 
-        int[] somaPontos = new int[2];
-
-        for(int i = 0; i < 2; i++){
-            somaPontos[i] = Q1[i] + Q2[i] + Q3[i] + Q4[i] + OT[i];
-        }
-
+        i = posEquipe;
+        somaPontos[i] = Q1[i] + Q2[i] + Q3[i] + Q4[i] + OT[i];
+        
         return somaPontos; 
     }
 
     public char vencedorDoJogo(){
 
-        int[] pontosEquipes = totalPontos();
+        equipe1 = totalPontos(0);
+        equipe2 = totalPontos(1); 
 
-        if(pontosEquipes[0] > pontosEquipes[1]){
+        if(equipe1 > equipe2){
             return 'A';
         }else{
             return 'B'; 
