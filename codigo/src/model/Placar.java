@@ -1,3 +1,4 @@
+package model;
 public class Placar {
 
     private int[] Q1;

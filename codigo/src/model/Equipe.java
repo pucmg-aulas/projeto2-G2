@@ -1,3 +1,4 @@
+package model;
 public class Equipe {
     private String nome;
 
