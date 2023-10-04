@@ -61,14 +61,10 @@ public class Placar {
     }
 
     public char vencedorDoJogo(){
-
-        equipe1 = totalPontos(0);
-        equipe2 = totalPontos(1); 
-
-        if(equipe1 > equipe2){
+        if(totalPontos(0) > totalPontos(1)){
             return 'A';
-        }else{
-            return 'B'; 
+        }else {
+            return 'B';
         }
     }
 }
