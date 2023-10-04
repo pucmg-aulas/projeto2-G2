@@ -17,7 +17,7 @@ public class GerarCsvTabela {
         Placar auxPlacar;
         
         try {
-            FileWriter fw = new FileWriter(new File("../db/tabelas/" + "tabela" + tabela.getJogos().get(0).getData().getYear() + ".csv")); // fileWriter apontando para o path onde estão os dados 
+            FileWriter fw = new FileWriter(new File("../db/" + "tabela" + tabela.getJogos().get(0).getData().getYear() + ".csv")); // fileWriter apontando para o path onde estão os dados 
             
             for(int i = 0; i < jogos.size(); i++) {
                 auxJogo = jogos.get(i);
