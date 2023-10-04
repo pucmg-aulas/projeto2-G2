@@ -57,12 +57,7 @@ public class Placar {
 
 
     public int totalPontos(int posEquipe){
-        int somaPontos = 0;
-
-        i = posEquipe;
-        somaPontos[i] = Q1[i] + Q2[i] + Q3[i] + Q4[i] + OT[i];
-        
-        return somaPontos; 
+        return Q1[posEquipe] + Q2[posEquipe] + Q3[posEquipe] + Q4[posEquipe] + OT[posEquipe]; 
     }
 
     public char vencedorDoJogo(){
