@@ -40,7 +40,6 @@ public class Temporada {
     }
 
     public Equipe buscarEquipe(String nome) {
-
     }
 
     public void cadastrarJogo(Jogo novoJogo) {
