@@ -24,6 +24,7 @@ public class Temporada {
     public Tabela getTabela() {
         return tabela;
     }
+    
 
     public void setTabela(Tabela tabela) {
         this.tabela = tabela;
