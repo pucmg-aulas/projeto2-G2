@@ -40,7 +40,12 @@ public class Temporada {
     }
 
     public Equipe buscarEquipe(String nome) {
-
+        for(int i = 0;i<equipes.size();i++){
+            if(equipes.get(i).getNome().equals(nome)){
+                return equipes.get(i);
+            }
+        }
+            return null;
     }
 
     public void cadastrarJogo(Jogo novoJogo) {
