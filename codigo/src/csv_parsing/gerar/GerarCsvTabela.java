@@ -9,8 +9,13 @@ import model.Jogo;
 import model.Placar;
 import model.Tabela;
 
-
 public class GerarCsvTabela {
+
+    /**
+     * Gera um arquivo gravando os dados presentes em Tabela.
+     * @param tabela a {@code Tabela} a ser gravada
+     * @param ano especifica o nome do arquivo
+     */
 
     public void gerar(Tabela tabela, Year ano) {
         ArrayList<Jogo> jogos = tabela.getJogos();
