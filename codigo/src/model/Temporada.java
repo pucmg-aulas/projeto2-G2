@@ -8,10 +8,10 @@ public class Temporada {
     private Tabela tabela;
     private ArrayList<Equipe> equipes;
 
-    public Temporada(Year ano, Tabela tabela) {
+    public Temporada(Year ano, Tabela tabela, ArrayList<Equipe> equipes){
         this.ano = ano;
         this.tabela = tabela;
-        equipes = new ArrayList<Equipe>();
+        this.equipes = equipes;
     }
 
     public Year getAno() {
