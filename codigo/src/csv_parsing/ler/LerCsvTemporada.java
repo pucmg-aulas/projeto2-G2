@@ -7,25 +7,9 @@ import java.util.ArrayList;
 
 import model.Equipe;
 import model.Temporada;
-import model.Tabela;
 
 public class LerCsvTemporada {
 
-     /**
-     * Busca a tabela a partir dos dados fornecidos.
-     *
-     * @param dados Os dados a serem usados para buscar a tabela.
-     * @return A tabela encontrada.
-     */
-    public Tabela BuscarTabela(String[] dados){
-
-    }
-    
-    /**
-     * Lê um arquivo CSV contendo os dados de uma temporada e cria um objeto Temporada com base nesses dados.
-     * @param ano O ano da temporada a ser lida.
-     * @return O objeto Temporada criado a partir dos dados do arquivo CSV.
-     */
     public Temporada ler(Year ano) {
         ArrayList<Equipe> equipes = new ArrayList<Equipe>();
         String line;
@@ -70,7 +54,7 @@ public class LerCsvTemporada {
 
             br.close();
 
-            return new Temporada(ano, tabela, equipes);
+            return new Temporada(ano, null, equipes);
         } catch (Exception e) {
             e.printStackTrace();
         }
