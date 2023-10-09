@@ -7,6 +7,14 @@ public class Jogo {
     private Equipe equipeB;
     private Placar placar;
 
+    /**
+     * Construtor para criar uma nova instância de Jogo com a data, equipes e placar especificados.
+     *
+     * @param data     A data em que o jogo ocorreu.
+     * @param equipeA  A equipe A que participou do jogo.
+     * @param equipeB  A equipe B que participou do jogo.
+     * @param placar   O placar do jogo.
+     */
     public Jogo(LocalDate data, Equipe equipeA, Equipe equipeB, Placar placar) {
         this.data = data;
         this.equipeA = equipeA;
@@ -30,6 +38,9 @@ public class Jogo {
         return placar;
     }
 
+    /**
+     * Exibe o placar do jogo no console.
+     */
     public void exibirPlacar() {
         int pontosEquipeA = placar.totalPontos(0);
         int pontosEquipeB = placar.totalPontos(1);
@@ -38,6 +49,13 @@ public class Jogo {
         System.out.println(equipeB.getNome() + ": " + pontosEquipeB);
     }
 
+     /**
+     * Determina qual equipe corresponde a um nome de equipe fornecido ('A' para equipeA, 'B' para equipeB).
+     *
+     * @param nomeEquipe O nome da equipe a ser verificado.
+     * @return 'A' se o nome corresponder à equipeA, 'B' se corresponder à equipeB.
+     * @throws IllegalArgumentException Se o nome de equipe não corresponder a nenhuma das equipes.
+     */
     public char qualEquipe(String nomeEquipe) {
         if (nomeEquipe.equals(equipeA.getNome())) {
             return 'A';
