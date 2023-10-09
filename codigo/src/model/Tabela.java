@@ -29,9 +29,9 @@ public class Tabela {
             auxJogo = jogos.get(i);
             if(auxJogo.getData().equals(data) && auxJogo.getEquipeA().getNome().compareTo(equipeA) == 0 && auxJogo.getEquipeA().getNome().compareTo(equipeB) == 0) {
                 jogos.remove(i);
-                System.out.println("Jogo removido com sucesso");
+                System.out.println("\nJogo removido com sucesso");
             } else {
-                System.out.println("Erro: Jogo inexistente");
+                System.out.println("\nErro: Jogo inexistente");
             }
         }
     }
