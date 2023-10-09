@@ -1,4 +1,5 @@
 package model;
+
 import java.time.LocalDate;
 
 public class Jogo {
@@ -31,11 +32,18 @@ public class Jogo {
     }
 
     public void exibirPlacar() {
-        int pontosEquipeA = placar.totalPontos(0);
-        int pontosEquipeB = placar.totalPontos(1);
-        System.out.println("Placar do jogo:");
-        System.out.println(equipeA.getNome() + ": " + pontosEquipeA);
-        System.out.println(equipeB.getNome() + ": " + pontosEquipeB);
+        if (placar != null) {
+            int pontosEquipeA = placar.totalPontos(0);
+            int pontosEquipeB = placar.totalPontos(1);
+            System.out.println("Placar do jogo -" + data + ":");
+            System.out.println(equipeA.getNome() + ": " + pontosEquipeA);
+            System.out.println(equipeB.getNome() + ": " + pontosEquipeB);
+        } else {
+            System.out.println("Placar do jogo -" + data + ":");
+            System.out.println(equipeA.getNome() + ": " + "x");
+            System.out.println(equipeB.getNome() + ": " + "x");
+        }
+
     }
 
     public char qualEquipe(String nomeEquipe) {
@@ -47,5 +55,5 @@ public class Jogo {
             throw new IllegalArgumentException("Nome de equipe inválido.");
         }
     }
-    
+
 }
