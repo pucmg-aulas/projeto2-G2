@@ -27,7 +27,7 @@ public class Tabela {
 
         for(int i = 0; i < tamJogos; i++) {
             auxJogo = jogos.get(i);
-            if(auxJogo.getData().equals(data) && auxJogo.getEquipeA().getNome().compareTo(equipeA) == 1 && auxJogo.getEquipeA().getNome().compareTo(equipeB) == 1) {
+            if(auxJogo.getData().equals(data) && auxJogo.getEquipeA().getNome().compareTo(equipeA) == 0 && auxJogo.getEquipeA().getNome().compareTo(equipeB) == 0) {
                 jogos.remove(i);
                 System.out.println("Jogo removido com sucesso");
             } else {
@@ -49,7 +49,7 @@ public class Tabela {
 
         for(int i = 0; i < numJogos; i++) {
             aux_jogo = jogos.get(i);
-            if(aux_jogo.getEquipeA().getNome() == equipe || aux_jogo.getEquipeB().getNome() == equipe) {
+            if(aux_jogo.getEquipeA().getNome().compareTo(equipe) == 0 || aux_jogo.getEquipeB().getNome().compareTo(equipe) == 0) {
                 result.add(aux_jogo);
             }
         }
