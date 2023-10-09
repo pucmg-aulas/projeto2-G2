@@ -1,4 +1,5 @@
 package model;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Tabela {
@@ -14,6 +15,25 @@ public class Tabela {
 
     public void setJogos(ArrayList<Jogo> jogos) {
         this.jogos = jogos;
+    }
+
+    public void cadastrarJogo(Jogo novoJogo) {
+        jogos.add(novoJogo);
+    }
+
+    public void removerJogo(LocalDate data, String equipeA, String equipeB) {
+        int tamJogos = jogos.size();
+        Jogo auxJogo;
+
+        for(int i = 0; i < tamJogos; i++) {
+            auxJogo = jogos.get(i);
+            if(auxJogo.getData().equals(data) && auxJogo.getEquipeA().getNome().compareTo(equipeA) == 1 && auxJogo.getEquipeA().getNome().compareTo(equipeB) == 1) {
+                jogos.remove(i);
+                System.out.println("Jogo removido com sucesso");
+            } else {
+                System.out.println("Erro: Jogo inexistente");
+            }
+        }
     }
 
     /**
