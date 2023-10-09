@@ -41,7 +41,6 @@ public class Tabela {
 
         for(int i = 0; i < tamJogos; i++) {
             jogos.get(i).exibirPlacar();
-            
         }
     }
 
@@ -58,7 +57,7 @@ public class Tabela {
 
         for(int i = 0; i < numJogos; i++) {
             aux_jogo = jogos.get(i);
-            if(aux_jogo.getEquipeA().getNome().compareTo(equipe) == 0 || aux_jogo.getEquipeB().getNome().compareTo(equipe) == 0) {
+            if(aux_jogo.getPlacar() != null && (aux_jogo.getEquipeA().getNome().compareTo(equipe) == 0 || aux_jogo.getEquipeB().getNome().compareTo(equipe) == 0)) {
                 result.add(aux_jogo);
             }
         }
