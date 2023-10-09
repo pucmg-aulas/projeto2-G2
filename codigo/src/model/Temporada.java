@@ -98,79 +98,78 @@ public class Temporada {
     }
 
     public void menu() {
-    Scanner scanner = new Scanner(System.in);
-    int opcao = 0;
-    System.out.println("Bem-vindo ao Sistema de Gerenciamento de Ligas Desportivas!\n");
+        Scanner scanner = new Scanner(System.in);
+        int opcao = 0;
+        System.out.println("Bem-vindo ao Sistema de Gerenciamento de Ligas Desportivas!\n");
 
-    do {
-        System.out.println("Escolha uma opção:\n");
-        System.out.println("1. Gerar tabela");
-        System.out.println("2. Equipes");
-        System.out.println("3. Jogos");
-        System.out.println("4. Sair");
-        System.out.println("Selecione a opção desejada (digite o número correspondente):");
-        opcao = scanner.nextInt();
+        do {
+            System.out.println("Escolha uma opção:\n");
+            System.out.println("1. Gerar tabela");
+            System.out.println("2. Equipes");
+            System.out.println("3. Jogos");
+            System.out.println("4. Sair");
+            System.out.println("Selecione a opção desejada (digite o número correspondente):");
+            opcao = scanner.nextInt();
 
-        switch (opcao) {
-            case 1:
-                gerar();
-                break;
-            case 2:
-                System.out.println("--------------------------------Equipes--------------------------------\n");
-                do {
-                    System.out.println("Escolha uma opção:\n");
-                    System.out.println("1. Listar equipes");
-                    System.out.println("2. Adicionar equipe");
-                    System.out.println("3. Excluir equipe");
-                    System.out.println("4. Sair");
-                    System.out.println("Selecione a opção desejada (digite o número correspondente):");
-                    opcao = scanner.nextInt();
-                    ArrayList<Equipe> equipes = new ArrayList<Equipe>();
+            switch (opcao) {
+                case 1:
+                    gerar();
+                    break;
+                case 2:
+                    System.out.println("--------------------------------Equipes--------------------------------\n");
+                    do {
+                        System.out.println("Escolha uma opção:\n");
+                        System.out.println("1. Listar equipes");
+                        System.out.println("2. Adicionar equipe");
+                        System.out.println("3. Excluir equipe");
+                        System.out.println("4. Sair");
+                        System.out.println("Selecione a opção desejada (digite o número correspondente):");
+                        opcao = scanner.nextInt();
+                        ArrayList<Equipe> equipes = new ArrayList<Equipe>();
 
-                    switch (opcao) {
-                        case 1:
-                            listarEquipes();
-                            break;
-                        case 2:
-                            cadastrarEquipe(scanner, equipes);
-                            break;
-                        case 3:
-                            removerEquipe(scanner, equipes);
-                            break;
-                    }
-                } while (opcao != 4);
-                break;
-            case 3:
-                System.out.println("--------------------------------Jogos--------------------------------\n");
-                do {
-                    System.out.println("Escolha uma opção:\n");
-                    System.out.println("1. Listar jogos");
-                    System.out.println("2. Adicionar jogo");
-                    System.out.println("3. Excluir jogo");
-                    System.out.println("4. Sair");
-                    System.out.println("Selecione a opção desejada (digite o número correspondente):");
-                    opcao = scanner.nextInt();
+                        switch (opcao) {
+                            case 1:
+                                listarEquipes();
+                                break;
+                            case 2:
+                                cadastrarEquipe(scanner, equipes);
+                                break;
+                            case 3:
+                                removerEquipe(scanner, equipes);
+                                break;
+                        }
+                    } while (opcao != 4);
+                    break;
+                case 3:
+                    System.out.println("--------------------------------Jogos--------------------------------\n");
+                    do {
+                        System.out.println("Escolha uma opção:\n");
+                        System.out.println("1. Listar jogos");
+                        System.out.println("2. Adicionar jogo");
+                        System.out.println("3. Excluir jogo");
+                        System.out.println("4. Sair");
+                        System.out.println("Selecione a opção desejada (digite o número correspondente):");
+                        opcao = scanner.nextInt();
 
-                    switch (opcao) {
-                        case 1:
-                            listarJogos();
-                            break;
-                        case 2:
-                            cadastrarJogo(scanner);
-                            System.out.println("Jogo cadastrado!");
-                            break;
-                        case 3:
-                            removerJogo();
-                            System.out.println("Jogo removido!");
-                            break;
-                    }
+                        switch (opcao) {
+                            case 1:
+                                listarJogos();
+                                break;
+                            case 2:
+                                cadastrarJogo(scanner);
+                                System.out.println("Jogo cadastrado!");
+                                break;
+                            case 3:
+                                removerJogo();
+                                System.out.println("Jogo removido!");
+                                break;
+                        }
 
-                } while (opcao != 4);
-                break;
-        }
-    } while (opcao != 4);
+                    } while (opcao != 4);
+                    break;
+            }
+        } while (opcao != 4);
 
-    scanner.close();
+        scanner.close();
+    }
 }
-
-
