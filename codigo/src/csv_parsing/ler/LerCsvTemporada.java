@@ -7,13 +7,8 @@ import java.util.ArrayList;
 
 import model.Equipe;
 import model.Temporada;
-import model.Tabela;
 
 public class LerCsvTemporada {
-
-    public Tabela BuscarTabela(String[] dados){
-
-    }
 
     public Temporada ler(Year ano) {
         ArrayList<Equipe> equipes = new ArrayList<Equipe>();
@@ -59,7 +54,7 @@ public class LerCsvTemporada {
 
             br.close();
 
-            return new Temporada(ano, tabela, equipes);
+            return new Temporada(ano, null, equipes);
         } catch (Exception e) {
             e.printStackTrace();
         }
