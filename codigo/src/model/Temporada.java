@@ -1,4 +1,5 @@
 package model;
+
 import java.time.LocalDate;
 import java.time.Month;
 import java.time.Year;
@@ -10,7 +11,7 @@ public class Temporada {
     private Tabela tabela;
     private ArrayList<Equipe> equipes;
 
-    public Temporada(Year ano, Tabela tabela, ArrayList<Equipe> equipes){
+    public Temporada(Year ano, Tabela tabela, ArrayList<Equipe> equipes) {
         this.ano = ano;
         this.tabela = tabela;
         this.equipes = equipes;
@@ -21,7 +22,8 @@ public class Temporada {
 
         auxData = data.split("/");
 
-        return LocalDate.of(Integer.parseInt(auxData[2]), Month.of(Integer.parseInt(auxData[1])), Integer.parseInt(auxData[0]));
+        return LocalDate.of(Integer.parseInt(auxData[2]), Month.of(Integer.parseInt(auxData[1])),
+                Integer.parseInt(auxData[0]));
     }
 
     public Year getAno() {
@@ -35,7 +37,6 @@ public class Temporada {
     public Tabela getTabela() {
         return tabela;
     }
-    
 
     public void setTabela(Tabela tabela) {
         this.tabela = tabela;
@@ -50,12 +51,12 @@ public class Temporada {
     }
 
     public Equipe buscarEquipe(String nome) {
-        for(int i = 0;i<equipes.size();i++){
-            if(equipes.get(i).getNome().equals(nome)){
+        for (int i = 0; i < equipes.size(); i++) {
+            if (equipes.get(i).getNome().equals(nome)) {
                 return equipes.get(i);
             }
         }
-            return null;
+        return null;
     }
 
     public void cadastrarJogo(Scanner scanner) {
@@ -70,7 +71,8 @@ public class Temporada {
         data = parseData(scanner.nextLine());
 
     }
-    public void removerJogo(Scanner scanner){
+
+    public void removerJogo(Scanner scanner) {
 
     }
 
@@ -82,13 +84,13 @@ public class Temporada {
         equipes.add(equipe);
     }
 
-    public void removerEquipe(Scanner scanner){
+    public void removerEquipe(Scanner scanner) {
         String auxEquipe;
         int tamEquipes = equipes.size();
         System.out.println("Informe o nome da equipe que deseja remover");
         auxEquipe = scanner.nextLine();
-        for(int i = 0; i < tamEquipes; i++){
-            if(equipes.get(i).getNome().equals(auxEquipe)){
+        for (int i = 0; i < tamEquipes; i++) {
+            if (equipes.get(i).getNome().equals(auxEquipe)) {
                 equipes.remove(i);
                 System.out.println("Equipe " + auxEquipe + " removida com sucesso");
             }
@@ -96,44 +98,79 @@ public class Temporada {
     }
 
     public void menu() {
-        Scanner scanner = new Scanner(System.in);
-        int opcao = 0;
-        System.out.println("Bem-vindo ao Sistema de Gerenciamento de Ligas Desportivas!\n");
-        do{
-            System.out.println("Escolha uma opção:\n");
-            System.out.println("1. Cadastrar Partida");
-            System.out.println("2. Buscar Equipe");
-            System.out.println("3. Listar Todas as Partidas");
-            System.out.println("4. Gerar Tabela de Classificação");
-            System.out.println("5. Equipe com o Melhor Ataque");
-            System.out.println("6. Equipe com a Melhor Defesa");
-            System.out.println("7. Sair\n");
-            System.out.println("Selecione a opção desejada (digite o número correspondente):");
-            opcao = scanner.nextInt();
+    Scanner scanner = new Scanner(System.in);
+    int opcao = 0;
+    System.out.println("Bem-vindo ao Sistema de Gerenciamento de Ligas Desportivas!\n");
 
-            switch (opcao){
-                case 1:
-                    
-                    break;
-                case 2:
-                    
-                    break;
-                case 3:
-                    break;
-                case 4:
-                    break;
-                
-                    
+    do {
+        System.out.println("Escolha uma opção:\n");
+        System.out.println("1. Gerar tabela");
+        System.out.println("2. Equipes");
+        System.out.println("3. Jogos");
+        System.out.println("4. Sair");
+        System.out.println("Selecione a opção desejada (digite o número correspondente):");
+        opcao = scanner.nextInt();
 
-                
-            }
-            
-        } while (opcao != 7);
+        switch (opcao) {
+            case 1:
+                gerar();
+                break;
+            case 2:
+                System.out.println("--------------------------------Equipes--------------------------------\n");
+                do {
+                    System.out.println("Escolha uma opção:\n");
+                    System.out.println("1. Listar equipes");
+                    System.out.println("2. Adicionar equipe");
+                    System.out.println("3. Excluir equipe");
+                    System.out.println("4. Sair");
+                    System.out.println("Selecione a opção desejada (digite o número correspondente):");
+                    opcao = scanner.nextInt();
+                    ArrayList<Equipe> equipes = new ArrayList<Equipe>();
 
-        
+                    switch (opcao) {
+                        case 1:
+                            listarEquipes();
+                            break;
+                        case 2:
+                            cadastrarEquipe(scanner, equipes);
+                            break;
+                        case 3:
+                            removerEquipe(scanner, equipes);
+                            break;
+                    }
+                } while (opcao != 4);
+                break;
+            case 3:
+                System.out.println("--------------------------------Jogos--------------------------------\n");
+                do {
+                    System.out.println("Escolha uma opção:\n");
+                    System.out.println("1. Listar jogos");
+                    System.out.println("2. Adicionar jogo");
+                    System.out.println("3. Excluir jogo");
+                    System.out.println("4. Sair");
+                    System.out.println("Selecione a opção desejada (digite o número correspondente):");
+                    opcao = scanner.nextInt();
 
-        scanner.close();
+                    switch (opcao) {
+                        case 1:
+                            listarJogos();
+                            break;
+                        case 2:
+                            cadastrarJogo(scanner);
+                            System.out.println("Jogo cadastrado!");
+                            break;
+                        case 3:
+                            removerJogo();
+                            System.out.println("Jogo removido!");
+                            break;
+                    }
 
-    }
+                } while (opcao != 4);
+                break;
+        }
+    } while (opcao != 4);
 
+    scanner.close();
 }
+
+
