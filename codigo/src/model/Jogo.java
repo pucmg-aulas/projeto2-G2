@@ -31,10 +31,21 @@ public class Jogo {
     }
 
     public void exibirPlacar() {
-
+        int pontosEquipeA = placar.totalPontos(0);
+        int pontosEquipeB = placar.totalPontos(1);
+        System.out.println("Placar do jogo:");
+        System.out.println(equipeA.getNome() + ": " + pontosEquipeA);
+        System.out.println(equipeB.getNome() + ": " + pontosEquipeB);
     }
 
     public char qualEquipe(String nomeEquipe) {
-        
+        if (nomeEquipe.equals(equipeA.getNome())) {
+            return 'A';
+        } else if (nomeEquipe.equals(equipeB.getNome())) {
+            return 'B';
+        } else {
+            throw new IllegalArgumentException("Nome de equipe inválido.");
+        }
     }
+    
 }
