@@ -29,10 +29,18 @@ public class Tabela {
             auxJogo = jogos.get(i);
             if(auxJogo.getData().equals(data) && auxJogo.getEquipeA().getNome().compareTo(equipeA) == 0 && auxJogo.getEquipeA().getNome().compareTo(equipeB) == 0) {
                 jogos.remove(i);
-                System.out.println("Jogo removido com sucesso");
+                System.out.println("\nJogo removido com sucesso");
             } else {
-                System.out.println("Erro: Jogo inexistente");
+                System.out.println("\nErro: Jogo inexistente");
             }
+        }
+    }
+
+    public void listarJogos() {
+        int tamJogos = jogos.size();
+
+        for(int i = 0; i < tamJogos; i++) {
+            jogos.get(i).exibirPlacar();
         }
     }
 
@@ -49,7 +57,7 @@ public class Tabela {
 
         for(int i = 0; i < numJogos; i++) {
             aux_jogo = jogos.get(i);
-            if(aux_jogo.getEquipeA().getNome().compareTo(equipe) == 0 || aux_jogo.getEquipeB().getNome().compareTo(equipe) == 0) {
+            if(aux_jogo.getPlacar() != null && (aux_jogo.getEquipeA().getNome().compareTo(equipe) == 0 || aux_jogo.getEquipeB().getNome().compareTo(equipe) == 0)) {
                 result.add(aux_jogo);
             }
         }
