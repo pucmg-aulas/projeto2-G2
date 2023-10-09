@@ -74,10 +74,10 @@ public class Temporada {
 
             switch (opcao){
                 case 1:
-                    cadastrarJogo(jogo);
+                    
                     break;
                 case 2:
-                    buscarJogosEquipe(equipe);
+                    
                     break;
                 case 3:
                     break;
