@@ -36,6 +36,15 @@ public class Tabela {
         }
     }
 
+    public void listarJogos() {
+        int tamJogos = jogos.size();
+
+        for(int i = 0; i < tamJogos; i++) {
+            jogos.get(i).exibirPlacar();
+            
+        }
+    }
+
     /**
      * Busca os jogos de determinada equipe.
      * @param equipe
