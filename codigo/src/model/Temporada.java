@@ -82,24 +82,6 @@ public class Temporada {
         return null;
     }
 
-     /**
-     * Cadastra um novo jogo na temporada.
-     *
-     * @param scanner O scanner para entrada de dados.
-     */
-    public void cadastrarJogo(Scanner scanner) {
-        String nomeA;
-        String nomeB;
-        LocalDate data;
-        System.out.println("Informe o nome da equipe A");
-        nomeA = scanner.nextLine();
-        System.out.println("Informe o nome da equipe B");
-        nomeB = scanner.nextLine();
-        System.out.println("Informe a data do jogo");
-        data = parseData(scanner.nextLine());
-
-    }
-
     /**
      * Remove um jogo da temporada.
      *
