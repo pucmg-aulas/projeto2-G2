@@ -58,7 +58,7 @@ public class LerCsvTabela {
 
         try {
             
-            BufferedReader br = new BufferedReader(new FileReader(".../db/tabela"+ano+".csv"));
+            BufferedReader br = new BufferedReader(new FileReader("codigo\\db\\tabela" + ano + ".csv"));
             line = br.readLine();
 
             while (line != null) {

@@ -23,13 +23,17 @@ public class GerarCsvTabela {
         Placar auxPlacar;
         
         try {
-            FileWriter fw = new FileWriter(new File("../db/" + "tabela" + ano + ".csv")); // fileWriter apontando para o path onde estão os dados 
+            File f = new File("codigo\\db\\tabela" + ano + ".csv");
+            f.createNewFile();
+            FileWriter fw = new FileWriter(f); // fileWriter apontando para o path onde estão os dados 
             
             for(int i = 0; i < jogos.size(); i++) {
                 auxJogo = jogos.get(i);
                 auxPlacar = auxJogo.getPlacar();
                 fw.write(auxJogo.getData().toString()+","+auxJogo.getEquipeA().getNome()+","+auxJogo.getEquipeB().getNome()+","+auxPlacar.Q1[0]+","+auxPlacar.Q1[1]+","+auxPlacar.Q2[0]+","+auxPlacar.Q2[1]+","+auxPlacar.Q3[0]+","+auxPlacar.Q3[1]+","+auxPlacar.Q4[0]+","+auxPlacar.Q4[1]+","+auxPlacar.OT[0]+","+auxPlacar.OT[1]+"\n");
             }
+
+            fw.close();
         } catch (Exception e) {
             e.printStackTrace();
         }

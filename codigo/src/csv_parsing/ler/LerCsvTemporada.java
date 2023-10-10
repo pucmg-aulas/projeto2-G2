@@ -14,40 +14,25 @@ public class LerCsvTemporada {
         ArrayList<Equipe> equipes = new ArrayList<Equipe>();
         String line;
         String[] dados;
+        Equipe auxEquipe;
 
         try {
-            
-            BufferedReader br = new BufferedReader(new FileReader(".../db/temporada"+ano+".csv"));
+
+            BufferedReader br = new BufferedReader(new FileReader("codigo\\db\\temporada" + ano + ".csv"));
             line = br.readLine();
-            //Tabela tabela = temporada.getTabela();
+            // Tabela tabela = temporada.getTabela();
 
             while (line != null) {
                 dados = line.split(",");
 
-                //Criando equipes com  os nomes do arquivo gerado e adicionando no ArrayList de equipes
-                Equipe equipe = new Equipe(dados[2]);
-                equipes.add(equipe);
-                
-                equipe = new Equipe(dados[3]);
-                equipes.add(equipe);
-
-                equipe = new Equipe(dados[4]);
-                equipes.add(equipe);
-
-                equipe = new Equipe(dados[5]);
-                equipes.add(equipe);
-
-                equipe = new Equipe(dados[6]);
-                equipes.add(equipe);
-
-                equipe = new Equipe(dados[7]);
-                equipes.add(equipe);
-
-                equipe = new Equipe(dados[8]);
-                equipes.add(equipe);
-
-                equipe = new Equipe(dados[9]);
-                equipes.add(equipe);
+                // Criando equipes com os nomes do arquivo gerado e adicionando no ArrayList de
+                // equipes
+                if (!dados[2].equals("null")) {
+                    for (int i = 2; i < dados.length; i++) {
+                        auxEquipe = new Equipe(dados[i]);
+                        equipes.add(auxEquipe);
+                    }
+                }
 
                 line = br.readLine();
             }

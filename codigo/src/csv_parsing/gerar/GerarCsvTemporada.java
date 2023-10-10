@@ -12,12 +12,26 @@ public class GerarCsvTemporada {
 
     public void gerar(Temporada temporada, Year ano) {
         ArrayList<Equipe> equipes = temporada.getEquipes();
-        
+        int tamEquipes = equipes.size();
+
         try {
-            FileWriter fw = new FileWriter(new File("../db/" + "temporada" + ano + ".csv")); // fileWriter apontando para o path onde estão os dados 
-            
-            fw.write (ano.toString() + "," + "Tabela" + ano + "," + equipes.get(0).getNome()+ "," + equipes.get(1).getNome()+ ";" + equipes.get(2).getNome()+ ";" + equipes.get(3).getNome()+ ";" + equipes.get(4).getNome()+ ";" + equipes.get(5).getNome()+ ";" + equipes.get(6).getNome()+ ";" + equipes.get(7).getNome()+ "\n");
-        
+            File f = new File("codigo\\db\\temporada" + ano + ".csv");
+            f.createNewFile();
+            FileWriter fw = new FileWriter(f); // fileWriter apontando para o path onde estão os dados
+
+            fw.write(ano.toString() + "," + "Tabela" + ano + ",");
+
+            if (tamEquipes > 0) {
+                for (int i = 0; i < tamEquipes; i++) {
+                    fw.write(equipes.get(i).getNome()+",");
+                }
+            } else {
+                fw.write("null,");
+            }
+
+            fw.write("\n");
+
+            fw.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
