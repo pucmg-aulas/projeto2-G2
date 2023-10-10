@@ -10,6 +10,12 @@ import model.Equipe;
 
 public class GerarCsvTemporada {
 
+     /**
+     * Gera um arquivo CSV contendo os dados de uma temporada, incluindo o ano e a lista de equipes.
+     *
+     * @param temporada A temporada da qual os dados serão gerados.
+     * @param ano       O ano da temporada.
+     */
     public void gerar(Temporada temporada, Year ano) {
         ArrayList<Equipe> equipes = temporada.getEquipes();
         int tamEquipes = equipes.size();

@@ -22,6 +22,13 @@ public class Tabela {
         jogos.add(novoJogo);
     }
 
+    /**
+     * Remove um jogo da lista de jogos com base na data e nas equipes.
+     *
+     * @param data     A data do jogo a ser removido.
+     * @param equipeA  O nome da primeira equipe do jogo a ser removido.
+     * @param equipeB  O nome da segunda equipe do jogo a ser removido.
+     */
     public void removerJogo(LocalDate data, String equipeA, String equipeB) {
         int tamJogos = jogos.size();
         Jogo auxJogo;
@@ -38,6 +45,9 @@ public class Tabela {
         }
     }
 
+    /**
+     * Lista todos os jogos na lista de jogos e exibe o placar de cada jogo.
+     */
     public void listarJogos() {
         int tamJogos = jogos.size();
 

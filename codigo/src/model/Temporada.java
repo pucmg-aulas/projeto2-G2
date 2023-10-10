@@ -28,6 +28,12 @@ public class Temporada {
         this.equipes = equipes;
     }
 
+    /**
+     * Analisa uma string de data no formato "dd/MM/yyyy" e a converte em um objeto LocalDate.
+     *
+     * @param data A string de data no formato "dd/MM/yyyy".
+     * @return O objeto LocalDate representando a data.
+     */
     private LocalDate parseData(String data) {
         String auxData[];
 
@@ -61,6 +67,12 @@ public class Temporada {
         this.equipes = equipes;
     }
 
+    /**
+     * Busca uma equipe pelo nome na lista de equipes da temporada.
+     *
+     * @param nome O nome da equipe a ser buscada.
+     * @return A equipe encontrada ou null se não encontrada.
+     */
     public Equipe buscarEquipe(String nome) {
         for (int i = 0; i < equipes.size(); i++) {
             if (equipes.get(i).getNome().equals(nome)) {
@@ -70,10 +82,39 @@ public class Temporada {
         return null;
     }
 
+     /**
+     * Cadastra um novo jogo na temporada.
+     *
+     * @param scanner O scanner para entrada de dados.
+     */
+    public void cadastrarJogo(Scanner scanner) {
+        String nomeA;
+        String nomeB;
+        LocalDate data;
+        System.out.println("Informe o nome da equipe A");
+        nomeA = scanner.nextLine();
+        System.out.println("Informe o nome da equipe B");
+        nomeB = scanner.nextLine();
+        System.out.println("Informe a data do jogo");
+        data = parseData(scanner.nextLine());
+
+    }
+
+    /**
+     * Remove um jogo da temporada.
+     *
+     * @param scanner O scanner para entrada de dados.
+     */
     public void removerJogo(Scanner scanner) {
 
     }
 
+    /**
+     * Cadastra uma nova equipe na temporada.
+     *
+     * @param scanner     O scanner para entrada de dados.
+     * @param novaEquipe  A equipe a ser cadastrada.
+     */
     public void cadastrarEquipe(Scanner scanner) {
         String nome;
         System.out.println("Informe o nome da equipe");
@@ -82,6 +123,11 @@ public class Temporada {
         equipes.add(new Equipe(nome));
     }
 
+    /**
+     * Remove uma equipe da temporada.
+     *
+     * @param scanner O scanner para entrada de dados.
+     */
     public void removerEquipe(Scanner scanner) {
         String auxEquipe;
         int tamEquipes = equipes.size();
@@ -95,6 +141,9 @@ public class Temporada {
         }
     }
 
+    /**
+     * Exibe o menu de opções do sistema.
+     */
     public void submenuEquipes(Scanner scanner) {
         int opcao, tamEquipes;
         System.out.println("--------------------------------Equipes--------------------------------\n");
