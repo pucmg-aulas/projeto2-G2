@@ -249,6 +249,25 @@ public class Tabela {
         return result;
     }
 
+    public void formataNome(String[] nomesEquipes) {
+        for (String nomeEquipe : nomesEquipes) {
+            if (nomeEquipe.length() < 20) {
+                int numChar = nomeEquipe.length();
+                if (numChar % 2 == 0) {
+                    int space = (20 - numChar) / 2; 
+                    String espacos = " ".repeat(space); 
+                    String resultado = espacos + nomeEquipe + espacos;
+                    nomeEquipe = resultado;
+                }else{
+                    int space = (20 - numChar - 1) / 2; 
+                    String espacos = " ".repeat(space); 
+                    String resultado = espacos + nomeEquipe + espacos + " ";
+                    nomeEquipe = resultado;
+                }
+            }
+        }
+    }
+
     /**
      * Gera a tabela de classificação do campeonato com todas as informações das
      * equipes.
