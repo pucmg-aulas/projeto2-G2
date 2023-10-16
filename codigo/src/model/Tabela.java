@@ -249,23 +249,21 @@ public class Tabela {
         return result;
     }
 
-    public void formataNome(String[] nomesEquipes) {
-        for (String nomeEquipe : nomesEquipes) {
-            if (nomeEquipe.length() < 20) {
-                int numChar = nomeEquipe.length();
-                if (numChar % 2 == 0) {
-                    int space = (20 - numChar) / 2; 
-                    String espacos = " ".repeat(space); 
-                    String resultado = espacos + nomeEquipe + espacos;
-                    nomeEquipe = resultado;
-                }else{
-                    int space = (20 - numChar - 1) / 2; 
-                    String espacos = " ".repeat(space); 
-                    String resultado = espacos + nomeEquipe + espacos + " ";
-                    nomeEquipe = resultado;
-                }
+    public void formataNome(String nomeEquipe) {
+        if (nomeEquipe.length() < 20) {
+            int numChar = nomeEquipe.length();
+            if (numChar % 2 == 0) {
+                int space = (20 - numChar) / 2; 
+                String espacos = " ".repeat(space); 
+                String resultado = espacos + nomeEquipe + espacos;
+                nomeEquipe = resultado;
+            }else{
+                int space = (20 - numChar - 1) / 2; 
+                String espacos = " ".repeat(space); 
+                String resultado = espacos + nomeEquipe + espacos + " ";
+                nomeEquipe = resultado;
             }
-        }
+        } 
     }
 
     /**
@@ -285,7 +283,7 @@ public class Tabela {
         for (int i = 0; i < equipesOrdenadas.length; i++) {
             aux_jogosEquipe = buscarJogosEquipe(equipesOrdenadas[i]);
 
-            tabela = tabela.concat("\n|    " + (i+1) + "    |          " + equipesOrdenadas[i] + "          |    "
+            tabela = tabela.concat("\n|    " + (i+1) + "    |          " + formataNome(equipesOrdenadas[i]) + "          |    "
                     + pontosEquipe(aux_jogosEquipe, equipesOrdenadas[i]) + "   |  "
                     + aux_jogosEquipe.size() + "  |  "
                     + vitoriasEquipe(aux_jogosEquipe, equipesOrdenadas[i]) + "  |  "
