@@ -88,12 +88,18 @@ public class Temporada {
      * @param scanner     O scanner para entrada de dados.
      * @param novaEquipe  A equipe a ser cadastrada.
      */
-    public void cadastrarEquipe(Scanner scanner) {
+    public boolean cadastrarEquipe(Scanner scanner) {
         String nome;
         System.out.println("Informe o nome da equipe");
         scanner.nextLine();
         nome = scanner.nextLine();
-        equipes.add(new Equipe(nome));
+        if(nome.length() <= 30) {
+            equipes.add(new Equipe(nome));
+            return true;
+        } else {
+            return false;
+        }
+        
     }
 
     /**
