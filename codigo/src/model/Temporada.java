@@ -83,15 +83,6 @@ public class Temporada {
     }
 
     /**
-     * Remove um jogo da temporada.
-     *
-     * @param scanner O scanner para entrada de dados.
-     */
-    public void removerJogo(Scanner scanner) {
-
-    }
-
-    /**
      * Cadastra uma nova equipe na temporada.
      *
      * @param scanner     O scanner para entrada de dados.
