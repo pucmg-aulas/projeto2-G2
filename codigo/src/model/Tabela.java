@@ -249,21 +249,23 @@ public class Tabela {
         return result;
     }
 
-    public void formataNome(String nomeEquipe) {
+    public String formataNome(String nomeEquipe) {
         if (nomeEquipe.length() < 20) {
             int numChar = nomeEquipe.length();
             if (numChar % 2 == 0) {
                 int space = (20 - numChar) / 2; 
                 String espacos = " ".repeat(space); 
                 String resultado = espacos + nomeEquipe + espacos;
-                nomeEquipe = resultado;
+                return resultado;
             }else{
                 int space = (20 - numChar - 1) / 2; 
                 String espacos = " ".repeat(space); 
                 String resultado = espacos + nomeEquipe + espacos + " ";
-                nomeEquipe = resultado;
+                return resultado;
             }
-        } 
+        }
+        
+        return null;
     }
 
     /**
@@ -275,7 +277,7 @@ public class Tabela {
      */
 
     public String gerar(String[] nomesEquipes) {
-        String tabela = "|---------------------------------------------------------------------------------------|\n| Posicao |             Equipe           |  PTS  | |  J  |  V  |  D  |  MF  |  MC  |  DPTS  |\n|---------------------------------------------------------------------------------------|";
+        String tabela = "|---------------------------------------------------------------------------------------------------------|\n| Posicao |                 Equipe                 |  PTS  |  J   |  V   |  D   |  MF   |  MC   |   DPTS  |\n|---------------------------------------------------------------------------------------------------------|";
 
         String[] equipesOrdenadas = ordenarEquipes(nomesEquipes);
         ArrayList<Jogo> aux_jogosEquipe;
@@ -283,14 +285,14 @@ public class Tabela {
         for (int i = 0; i < equipesOrdenadas.length; i++) {
             aux_jogosEquipe = buscarJogosEquipe(equipesOrdenadas[i]);
 
-            tabela = tabela.concat("\n|    " + (i+1) + "    |          " + formataNome(equipesOrdenadas[i]) + "          |    "
-                    + pontosEquipe(aux_jogosEquipe, equipesOrdenadas[i]) + "   |  "
-                    + aux_jogosEquipe.size() + "  |  "
-                    + vitoriasEquipe(aux_jogosEquipe, equipesOrdenadas[i]) + "  |  "
-                    + derrotasEquipe(aux_jogosEquipe, equipesOrdenadas[i]) + "  |  "
-                    + marcadosFavor(aux_jogosEquipe, equipesOrdenadas[i]) + "  |  "
-                    + marcadosContra(aux_jogosEquipe, equipesOrdenadas[i]) + "  |  "
-                    + difMarcados(aux_jogosEquipe, equipesOrdenadas[i]) + "  |");
+            tabela = tabela.concat("\n|    " + (i+1) + "    |          " + formataNome(equipesOrdenadas[i]) + "          |   "
+                    + String.format("%02d", pontosEquipe(aux_jogosEquipe, equipesOrdenadas[i])) + "  |  "
+                    + String.format("%02d", aux_jogosEquipe.size()) + "  |  "
+                    + String.format("%02d", vitoriasEquipe(aux_jogosEquipe, equipesOrdenadas[i])) + "  |  "
+                    + String.format("%02d", derrotasEquipe(aux_jogosEquipe, equipesOrdenadas[i])) + "  |  "
+                    + String.format("%02d", marcadosFavor(aux_jogosEquipe, equipesOrdenadas[i])) + "  |  "
+                    + String.format("%02d", marcadosContra(aux_jogosEquipe, equipesOrdenadas[i])) + "  |    "
+                    + String.format("%02d", difMarcados(aux_jogosEquipe, equipesOrdenadas[i])) + "   |");
         }
 
         return tabela;
