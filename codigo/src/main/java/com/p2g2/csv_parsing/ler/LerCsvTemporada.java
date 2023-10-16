@@ -1,12 +1,12 @@
-package main.java.com.p2g2.csv_parsing.ler;
+package com.p2g2.csv_parsing.ler;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.time.Year;
 import java.util.ArrayList;
 
-import main.java.com.p2g2.model.Equipe;
-import main.java.com.p2g2.model.Temporada;
+import com.p2g2.model.Equipe;
+import com.p2g2.model.Temporada;
 
 public class LerCsvTemporada {
 

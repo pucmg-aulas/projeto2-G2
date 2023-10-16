@@ -1,4 +1,4 @@
-package main.java.com.p2g2.model;
+package com.p2g2.model;
 public class Placar {
 
     public int[] Q1;
