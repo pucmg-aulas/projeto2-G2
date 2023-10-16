@@ -1,4 +1,4 @@
-package model;
+package main.java.com.p2g2.model;
 
 public class Equipe {
     private String nome;

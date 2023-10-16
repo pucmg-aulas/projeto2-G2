@@ -1,12 +1,12 @@
-package csv_parsing.gerar;
+package main.java.com.p2g2.csv_parsing.gerar;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.time.Year;
 import java.util.ArrayList;
 
-import model.Temporada;
-import model.Equipe;
+import main.java.com.p2g2.model.Equipe;
+import main.java.com.p2g2.model.Temporada;
 
 public class GerarCsvTemporada {
 

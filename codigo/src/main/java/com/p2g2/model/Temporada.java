@@ -1,4 +1,4 @@
-package model;
+package main.java.com.p2g2.model;
 
 import java.time.LocalDate;
 import java.time.Month;
@@ -6,10 +6,10 @@ import java.time.Year;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import csv_parsing.gerar.GerarCsvTabela;
-import csv_parsing.gerar.GerarCsvTemporada;
-import csv_parsing.ler.LerCsvTabela;
-import csv_parsing.ler.LerCsvTemporada;
+import main.java.com.p2g2.csv_parsing.gerar.GerarCsvTabela;
+import main.java.com.p2g2.csv_parsing.gerar.GerarCsvTemporada;
+import main.java.com.p2g2.csv_parsing.ler.LerCsvTabela;
+import main.java.com.p2g2.csv_parsing.ler.LerCsvTemporada;
 
 public class Temporada {
     private Year ano;

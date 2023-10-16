@@ -1,13 +1,13 @@
-package csv_parsing.gerar;
+package main.java.com.p2g2.csv_parsing.gerar;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.time.Year;
 import java.util.ArrayList;
 
-import model.Jogo;
-import model.Placar;
-import model.Tabela;
+import main.java.com.p2g2.model.Jogo;
+import main.java.com.p2g2.model.Placar;
+import main.java.com.p2g2.model.Tabela;
 
 public class GerarCsvTabela {
 
