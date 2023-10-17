@@ -105,6 +105,7 @@ public class Temporada {
         String auxEquipe;
         int tamEquipes = equipes.size();
         System.out.println("Informe o nome da equipe que deseja remover");
+        scanner.nextLine();
         auxEquipe = scanner.nextLine();
         for (int i = 0; i < tamEquipes; i++) {
             if (equipes.get(i).getNome().equals(auxEquipe)) {
