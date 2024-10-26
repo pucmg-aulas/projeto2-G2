@@ -1,6 +1,16 @@
 package model;
 public class Placar {
 
+    // Aconselharia o uso de uma matriz para a armazenagem dos
+    // pontos de cada quarto
+
+    // Todos os atributos de uma classe deveriam ser privados com metodos
+    // set para que seus valores sejam alterados.
+
+    // Sinto que o uso da nomeclarutra equipe A e B, ao mesmo tempo que posEquipe
+    // 0 e 1, é um pouco confusa. Escolheria uma unica para usar e Criaria um Objeto
+    // separada para ter a noção de Placar por quarto, na qual cada quaeto teria
+    // dois atributos inteiros, um para a pirmiera equipe outra para a segunda.
     public int[] Q1;
     public int[] Q2;
     public int[] Q3;
