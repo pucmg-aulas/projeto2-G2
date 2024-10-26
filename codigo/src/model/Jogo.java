@@ -3,6 +3,11 @@ package model;
 import java.time.LocalDate;
 
 public class Jogo {
+    // Se os atributos são privados e inalteraveis após sua inicialização, seria interessante
+    // que fossem atributos cosntantes ultilizando a palavra reservada "final"
+
+    // Acredito que a informação completa do horario em que ocorreu o jogo
+    // tambem seria interessante, então trocaria de LocalDate para LocalDateTime.
     private LocalDate data;
     private Equipe equipeA;
     private Equipe equipeB;
@@ -50,6 +55,7 @@ public class Jogo {
             System.out.println(equipeA.getNome() + ": " + pontosEquipeA);
             System.out.println(equipeB.getNome() + ": " + pontosEquipeB);
         } else {
+            // Caso ainda não aja placar, não se deveria exibir 0 a 0?
             System.out.println("Placar do jogo -" + data + ":");
             System.out.println(equipeA.getNome() + ": " + "x");
             System.out.println(equipeB.getNome() + ": " + "x");

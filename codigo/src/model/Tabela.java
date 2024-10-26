@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Tabela {
+    // Eu usaria a interface List como o tipo do OBJ para ser mais 
+    // adequado aos pricipios SOLID.
     private ArrayList<Jogo> jogos;
 
     public Tabela(ArrayList<Jogo> jogos) {
@@ -45,6 +47,8 @@ public class Tabela {
         }
     }
 
+    // Faria o uso de um expreção Lambda para melhor legibilidade, no
+    // caso a espreção foreach
     /**
      * Lista todos os jogos na lista de jogos e exibe o placar de cada jogo.
      */
@@ -72,6 +76,7 @@ public class Tabela {
 
         for (int i = 0; i < numJogos; i++) {
             aux_jogo = jogos.get(i);
+            // colocaria as 3 condições em variavies para reduzir o tamanho do if
             if (aux_jogo.getPlacar() != null && (aux_jogo.getEquipeA().getNome().compareTo(equipe) == 0
                     || aux_jogo.getEquipeB().getNome().compareTo(equipe) == 0)) {
                 result.add(aux_jogo);
@@ -94,6 +99,10 @@ public class Tabela {
         int numJogos = jogosEquipe.size();
         Jogo aux_jogo;
 
+        // Percorreria o vetor com uma lambda como reduce 
+        // e usaria um ternario para fazer a verificação
+        // assim vc diminui o tambanho do codigo e aumenta 
+        // a legibilidade
         for (int i = 0; i < numJogos; i++) {
             aux_jogo = jogosEquipe.get(i);
 

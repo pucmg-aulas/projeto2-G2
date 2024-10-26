@@ -1,3 +1,6 @@
+// "csv_parsing" o padrão do java é usar CamelCase assim como pode ser visto nas
+// importações feitas abaixo. Logo o nome do pacote deve ser "CsvParsing" ao invés
+// de "csv_parsing".
 package csv_parsing.ler;
 
 import java.io.BufferedReader;
